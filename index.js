@@ -1,0 +1,4 @@
+const ROCK_SELECTION = 1;
+const PAPER_SELECTION = 2;
+const SCISSOR_SELECTION = 3;
+
