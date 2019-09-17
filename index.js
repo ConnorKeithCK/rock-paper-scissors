@@ -1,4 +1,9 @@
-const ROCK_SELECTION = 1;
-const PAPER_SELECTION = 2;
-const SCISSOR_SELECTION = 3;
+const playButton = document.getElementById("playButton");
+const welcomeScreen = dcoument.getElementById("welcomeScreen");
+const gameScreen = document.getElementById("gameScreen");
 
+playButton.addEventListener("click", function(){
+
+   
+
+});

@@ -8,6 +8,9 @@
     <title>Rock, Paper, Scissors!</title>
 </head>
 <body>
+
+    <div id ="welcomeScreen">
+
     <h1>Rock, Paper, Scissors!</h1>
     <p>Hello! This is my renditon of Rock, Paper, Scissors! created using JavaScript for my Web Game Development course.</p>
     <h1>How to play</h1>
@@ -19,9 +22,26 @@
         <li>Paper beats Rock</li>
         <li>Scissors beats Paper</li>
         </ol>
+
+        When you're ready, press "Play" below!
     </p>
 
-    <h1>Game Log</h1>
+    <button id = "playButton">Play</button>
+    
+    </div>
+
+    <div id ="gameScreen" class = "hidden">
+        <form>
+            <label>Select your move!: </label>
+            <select>
+                <option value="rock">Rock</option>
+                <option value="paper">Paper</option>
+                <option value="scissors">Scissors</option>
+            </select>
+        </form>
+        <h1>Game Log</h1>
+    </div>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="index.js"></script>
