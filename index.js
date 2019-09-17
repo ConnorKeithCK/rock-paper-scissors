@@ -2,28 +2,94 @@ const playButton = document.getElementById("playButton");
 const gameScreen = document.getElementById("gameScreen");
 const welcomeScreen = document.getElementById("welcomeScreen");
 const submitButton = document.getElementById("submitButton");
+const gameForm = document.getElementById("game");
+const userMove = document.getElementById("userMove");
+const gameLogFrame = document.getElementById("gameLog");
 
 const ROCK_SELECTION = 1;
 const PAPER_SELECTION = 2;
 const SCISSORS_SELECTION = 3;
 
+function gameOver(outcome) {
+    alert(outcome);
+    const logMessage = document.createElement("li");
+    logMessage.appendChild(document.createTextNode(outcome));
+    gameLogFrame.appendChild(logMessage)
+}
 
-playButton.addEventListener("click", function(){
+class RockPaperScissors {
+    constructor() {
+        this.ComputerMove = Math.floor(Math.random() * (3 - 1 + 1) + 1);
+        var userValue = userMove.options[userMove.selectedIndex].value;
+        // 1 rock
+        // 2 paper
+        // 3 scissors
 
+        if (this.ComputerMove === ROCK_SELECTION) {
+            if (userValue == 1) {
+                gameOver("Rock V.S. Rock - It's a tie!");
+               // alert("Rock V.S. Rock - It's a tie!");
+            }
+            if (userValue == 2) {
+                gameOver("Paper beats Rock, you win!");
+               // alert("Paper beats Rock, you win!");
+            } else {
+                gameOver("Rock beats Scissors, the computer wins!");
+               // alert ("Rock beats Scissors, the computer wins!");
+            }
+        } 
+
+        if (this.ComputerMove === PAPER_SELECTION) {
+            if (userValue == 1) {
+                gameOver("Paper beats Rock, the computer wins!");
+               // alert("Paper beats Rock, the computer wins!");
+            }
+            if (userValue == 2) {
+                gameOver("Paper V.S. Paper - It's a tie!");
+              //  alert("Paper V.S. Paper - It's a tie!");
+            } else {
+                gameOver("Scissors beats Paper, you win!");
+              //  alert ("Scissors beats Paper, you win!");
+            }
+        }
+
+        if (this.ComputerMove === SCISSORS_SELECTION) {
+            if (userValue == 1) {
+                gameOver("Rock beats Scissors, you win!");
+              //  alert("Rock beats Scissors, you win!");
+            }
+            if (userValue == 2) {
+                gameOver("Scissors beats Paper, the computer wins!");
+             //   alert("Scissors beats Paper, the computer wins!");
+            } else {
+                gameOver("Scissors V.S. Scissors - It's a tie!");
+              //  alert ("Scissors V.S. Scissors - It's a tie!");
+            }
+        }
+        
+    }
+    
+    
+
+}
+
+submitButton.addEventListener("submit", function(playGameEvent) {
+    playGameEvent.preventDefault();
+})
+
+
+playButton.addEventListener("click", function(clickEvent){
+
+    clickEvent.preventDefault();
     welcomeScreen.className = "hidden";
     gameScreen.className = "";
     
-});
-
-submitButton.addEventListener("submit", function() {
-
-    class RockPaperScissors {
-        constructor() {
-            this.ComputerMove = Math.floor(Math.random() * (3 - 1 + 1) + 1);
-            
-        }
-
-    }
-
 })
+
+gameForm.addEventListener("submit", function(submitEvent) {
+
+    submitEvent.preventDefault();
+    let game = new RockPaperScissors();
+})
+
 

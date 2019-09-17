@@ -32,16 +32,19 @@
 
     <div id ="gameScreen" class = "hidden">
         <h1>Play!</h1>
-        <form>
+        <form id ="game">
             <label>Select your move!: </label>
-            <select>
-                <option value="rock">Rock</option>
-                <option value="paper">Paper</option>
-                <option value="scissors">Scissors</option>
+            <select id = "userMove">
+                <option value="1">Rock</option>
+                <option value="2">Paper</option>
+                <option value="3">Scissors</option>
             </select>
-            <input type = "submit" value="Shoot!" id = "submitButton"/>
+            <input id = "submitButton" type = "submit" value="Shoot!"/>
         </form>
         <h1>Game Log</h1>
+        <ol id = "gameLog">
+
+        </ol>
     </div>
 
     <script src="index.js"></script>
