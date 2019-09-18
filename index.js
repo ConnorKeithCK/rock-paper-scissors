@@ -17,6 +17,7 @@ function gameOver(outcome) {
     const logMessage = document.createElement("li");
     logMessage.appendChild(document.createTextNode(outcome));
     gameLogFrame.appendChild(logMessage)
+    return;
 }
 
 class RockPaperScissors {
@@ -24,7 +25,8 @@ class RockPaperScissors {
         this.ComputerMove = Math.floor(Math.random() * (3 - 1 + 1) + 1);
         var userValue = userMove.options[userMove.selectedIndex].value;
 
-        if (this.ComputerMove === ROCK_SELECTION) {
+        if (this.ComputerMove == ROCK_SELECTION) {
+            console.log(userValue);
             if (userValue == 1) {
                 gameOver("Rock V.S. Rock - It's a tie!");
             }
@@ -35,7 +37,8 @@ class RockPaperScissors {
             }
         } 
 
-        if (this.ComputerMove === PAPER_SELECTION) {
+        if (this.ComputerMove == PAPER_SELECTION) {
+            console.log(userValue);
             if (userValue == 1) {
                 gameOver("Paper beats Rock, the computer wins!");
             }
@@ -46,7 +49,8 @@ class RockPaperScissors {
             }
         }
 
-        if (this.ComputerMove === SCISSORS_SELECTION) {
+        if (this.ComputerMove == SCISSORS_SELECTION) {
+            console.log(userValue);
             if (userValue == 1) {
                 gameOver("Rock beats Scissors, you win!");
             }
